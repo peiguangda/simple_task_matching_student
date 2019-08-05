@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  name: MyString
+  content: MyString
+  field: MyString
+  area: MyString
+  salary: 1
+  registration_deadline: 
+  task_deadline: 
+  veteran: false
+  descript_url: MyString
+  money_unit: MyString
+
+two:
+  user: two
+  name: MyString
+  content: MyString
+  field: MyString
+  area: MyString
+  salary: 1
+  registration_deadline: 
+  task_deadline: 
+  veteran: false
+  descript_url: MyString
+  money_unit: MyString
