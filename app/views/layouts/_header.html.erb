@@ -7,12 +7,12 @@
     <ul class="navbar-nav dropdown-right">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+          Quang Dai
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Name</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
+          <%= link_to "Logout", destroy_user_session_url, class: "dropdown-item", method: "delete" %>
         </div>
       </li>
     </ul>
