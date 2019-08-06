@@ -1,0 +1,16 @@
+<div class="list-group admin-list-task">
+  <div class="row w-100 ml-3 min-max-height">
+    <div class="col-md-10 mt-2 border-right">
+      <%= link_to "/admin/" do %>
+        <h5 class="row w-100">作業名</h5>
+      <% end %>
+      <hr>
+      <div class="row w-100">作業概要</div>
+    </div>
+    <div class="col-md mt-2 ml-2">
+      <div class="row w-100"><button type="button" class="btn btn-info w-100">承認</button></div>
+      <div class="row w-100"><button type="button" class="btn btn-danger w-100">非承認</button></div>
+      <div class="row w-100 justify-content-center"><%= link_to "詳細>>", "/tasks/1", class: "btn btn-primary w-100"%></div>
+    </div>
+  </div>
+</div>
