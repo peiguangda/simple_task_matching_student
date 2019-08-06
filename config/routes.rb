@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  # resources :users
   devise_for :users
   resources :tasks
   resources :matching_tasks
