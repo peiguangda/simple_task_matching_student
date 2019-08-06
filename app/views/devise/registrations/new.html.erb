@@ -2,6 +2,43 @@
   <h2>サインアップ</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <div class="form-group row">
+      <%= f.label "名前", class: "col-md-3" %><br/>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control col-md-6", placeholder: "名前" %>
+    </div>
+    
+    <div class="form-group row">
+      <%= f.label "生年月日", class: "col-md-3" %><br/>
+      <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday", class: "form-control col-md-6", placeholder: "生年月日" %>
+    </div>
+   
+    <div class="form-group row">
+      <%= f.label "住所", class: "col-md-3" %><br/>
+      <%= f.text_field :address, autofocus: true, autocomplete: "address", class: "form-control col-md-6", placeholder: "住所" %>
+    </div>
+    
+    <div class="form-group row">
+      <%= f.label "スキル", class: "col-md-3" %><br/>
+      <%= f.text_field :skill, autofocus: true, autocomplete: "skill", class: "form-control col-md-6", placeholder: "スキル" %>
+    </div>
+    
+     <div class="form-group row">
+      <%= f.label "資格", class: "col-md-3" %><br/>
+      <%= f.text_field :certificate, autofocus: true, autocomplete: "certificate", class: "form-control col-md-6", placeholder: "資格" %>
+    </div>
+    
+     <div class="form-group row">
+      <%= f.label "自己紹介", class: "col-md-3" %><br/>
+      <%= f.text_area:self_introduction, autofocus: true, autocomplete: "self_introduction", class: "form-control col-md-6", placeholder: "自己紹介" %>
+    </div>
+    
+     <div class="form-group row">
+      <%= f.label "口座情報", class: "col-md-3" %><br/>
+      <%= f.text_field :bank_account_number, autofocus: true, autocomplete: "bank_account_number", class: "form-control col-md-6", placeholder: "口座情報" %>
+    </div>
+    
+   
     <div class="form-group row">
       <%= f.label "メール", class: "col-md-3" %><br/>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control col-md-6", placeholder: "メール" %>
@@ -19,9 +56,20 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control col-md-6", placeholder: "パスワード再度入力" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "サインアップ" %>
+    <div class="form-group row">
+      <%= f.label "役割", class: "col-md-3" %><br/>
+        <%= f.radio_button :role, 2, class: "mt-2 m-2" %>
+        <%= f.label :フリーランス %>
+        <%= f.radio_button :role, 1, class: "mt-2 m-2" %> 
+        <%= f.label :企業 %>
+        <%= f.radio_button :role, 0, class: "mt-2 m-2" %>
+        <%= f.label :学生 %>
     </div>
+
+    <div class="actions">
+      <%= f.submit "サインアップ", class: "btn btn-primary" %>
+    </div>
+    
   <% end %>
 
   <%= render "devise/shared/links" %>
