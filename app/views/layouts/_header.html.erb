@@ -10,10 +10,18 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle nav-user-name-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Quang Dai
+            <%= current_user.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">プロフィール</a>
+            <!--学生-->
+            <% if current_user.role == 0 %>
+              <%= link_to "プロフィール", users_student_path, class: "dropdown-item" %>
+            <% else %>
+              <!--企業-->
+              <% if current_user.role == 1 %>
+                <%= link_to "プロフィール", users_profile_path, class: "dropdown-item" %>
+              <% end %>
+            <% end %>
             <%= link_to "ログアウト", destroy_user_session_url, class: "dropdown-item", method: "delete" %>
           </div>
         </li>

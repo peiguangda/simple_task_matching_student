@@ -58,6 +58,14 @@
   </div>
 </div>
 <hr>
-<div class="text-center">
-  <button class="btn btn-primary w-50">申し込み</button>
-</div>
+<% if user_signed_in? && current_user.role == 0 %>
+  <% if @matching_task %>
+    <div class="text-center">
+      <%= link_to "申し込み済み（詳細をご覧）", users_student_path, class: "btn btn-primary w-50" %>
+    </div>
+  <% else %>
+    <div class="text-center">
+      <%= link_to "申し込み", matching_tasks_path(task_id: @task.id), method: "post", class: "btn btn-primary w-50" %>
+    </div>
+  <% end %>
+<% end %>

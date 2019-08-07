@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  #resources :users
   get "users/profile", :to => "users#show"
   get "users/student", :to => "users#sprof"
+  resources :users
   resources :tasks
   resources :matching_tasks
   get "tops/index"
