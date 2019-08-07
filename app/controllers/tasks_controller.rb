@@ -7,6 +7,8 @@ class TasksController < ApplicationController
 
   def show
     @company = User.find_by id: @task.user_id
+    @matching_task = nil
+    @matching_task = MatchingTask.find_by task_id: params[:id], user_id: current_user.id if user_signed_in?
     return unless @company
   end
 
