@@ -1,9 +1,5 @@
+<% tasks.each do |task| %>
 <div class="m-2">
-<%= render "admin/tasks/form" %>
+<%= render "admin/tasks/form", task: task %>
 </div>
-<div class="m-2">
-  <%= render "admin/tasks/form" %>
-</div>
-<div class="m-2">
-  <%= render "admin/tasks/form" %>
-</div>
+<% end %>
