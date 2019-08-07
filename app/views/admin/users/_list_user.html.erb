@@ -1,9 +1,5 @@
+<% users.each do |user| %>
 <div class="m-2">
-  <%= render "admin/users/form" %>
+  <%= render "admin/users/form", user: user %>
 </div>
-<div class="m-2">
-  <%= render "admin/users/form" %>
-</div>
-<div class="m-2">
-  <%= render "admin/users/form" %>
-</div>
+<%  end  %>

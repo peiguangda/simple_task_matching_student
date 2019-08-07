@@ -5,7 +5,7 @@
 }
 
 .task-content-height {
-  height: 130px;
+  height: 140px;
 }
 
 .category-tasks {
@@ -59,4 +59,31 @@ body {
 
 .color-white {
   color: white !important;
+}
+
+.darken-3 {
+  background-color: #2a415d;
+}
+
+.white-text {
+  color: white;
+}
+
+#basic-text1 {
+  background-color: #50a7f4;
+  color: white;
+}
+
+.read_more {
+  position: absolute;
+  right: 4%;
+  bottom: -8%;
+  height: 35%;
+}
+
+.custom-text-center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }

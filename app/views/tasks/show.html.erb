@@ -19,12 +19,45 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<h3 class="text-center">Sun Asterisk</h3><hr>
+<h3 class="text-center mt-2"><%= @company.name %></h3>
+<hr>
 <div>
-  <div>作業名</div>
-  <div>作業内容</div>
-  <div>申込期日</div>
-  <div>賃金</div>
-  <div>申し込み時間</div>
-</div><hr>
-<div class="text-center"><button class="btn btn-primary w-50">申し込み</button></div>
+  <div class="card text-center">
+    <div class="card-header">
+      <h4><%= @task.field %></h4>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= @task.name %></h5>
+      <p class="card-text m-3"><%= @task.content %></p>
+      <hr>
+      <table class="table table-borderless mt-5">
+        <thead>
+        <tr>
+          <th scope="col">エリア</th>
+          <th scope="col">賃金</th>
+          <th scope="col">申込み期日</th>
+          <th scope="col">格納予想日</th>
+          <th scope="col">実装見込み</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row"><%= @task.area %></th>
+          <td><%= @task.salary %> <%= @task.money_unit %></td>
+          <td><%= @task.registration_deadline.year %>年<%= @task.registration_deadline.strftime('%m') %>
+            月<%= @task.registration_deadline.strftime('%e') %>日
+          </td>
+          <td><%= @task.task_deadline.year %>年<%= @task.task_deadline.strftime('%m') %>
+            月<%= @task.task_deadline.strftime('%e') %>日
+          </td>
+          <td><%= @task.time_to_do %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="text-center">
+  <button class="btn btn-primary w-50">申し込み</button>
+</div>
