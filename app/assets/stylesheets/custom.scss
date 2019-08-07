@@ -19,11 +19,44 @@
   height: 65px;
 }
 
-.mt-200px {
-  margin-top: 200px;
+.mt-100px {
+  margin-top: 100px;
 }
 
-.dropdown-right {
-  position: absolute;
-  right: 5%;
+body {
+  background-color: white;
+}
+
+.nav-color {
+  background-color: #356da5 !important;
+}
+
+.logo-color {
+  font-weight: bold;
+  color: white !important;
+  font-size: 22px;
+}
+
+.nav-user-name-style {
+  color: white !important;
+}
+
+.admin-list-task {
+  border: 1px solid #356ca4;
+  border-radius: 10px;
+  min-height: 140px;
+  max-height: 200px;
+}
+
+.min-max-height {
+  min-height: 140px;
+  max-height: 200px;
+}
+
+.border-right {
+  border-right: 1px solid #776eb2;
+}
+
+.color-white {
+  color: white !important;
 }
