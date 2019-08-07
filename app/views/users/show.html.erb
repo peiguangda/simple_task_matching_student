@@ -1,70 +1,146 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
-</head>
-
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-.w3-myfont {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-</style>
-<body>
-<div class="w3-container w3-myfont">
-  <p class="w3-large">サイト名　　　　　　　　　　　　      ユーザー名</p>
-  <p class="w3-large">学生プロフィール</p>
-  <button>投稿</button>
-  <p class="w3-large">写真</p>
-　<p class="w3-large">名前</p>
-　<p class="w3-large">住所</p>
-　<p class="w3-large">連絡先</p>
-  <p class="w3-large">自己紹介</p>
-  <p class="w3-large">作業一覧</p>
-  
-  <p class="w3-large">作業名</p>
-  <p><a href=>完了</a></p
-  <p><a href=>DM</a></p>
-  <p class="w3-large">作業中</p>
-  
-  <p class="w3-large">作業名</p>
-  <p><a href=>DM</a></p
-  <p class="w3-large">依頼中</p>
-  
-  <p class="w3-large">作業名</p>
-  <p><a href=>DM</a></p>
-  <p class="w3-large">非承認</p>
-  
-  <p class="w3-large">コメント</p>
-  
-  <p><a href=>再編集</a></p
-  
-  <p class="w3-large">作業名</p>
-  <p><a href=>支払い</a></p
-  <p><a href=>DM</a></p>
-  <p class="w3-large">完了</p>
-  
-  <p class="w3-large">作業名</p>
-  <p><a href=>DM</a></p>
-  <p class="w3-large">未承認</p>
-  
-  
-</body>
+  <head>
+    <style type="text/css">
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .w3-myfont {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      
+    }
+    li+ li {
+      border-left: 1px solid #333;
+    }
+    dt {
+      margin-top: 10px;
+    }
+    img {
+    width:100%;
+    max-width: 100%;
+    height: auto;
+    }
+    .profilebox {
+       background-color: #F2F2F2; 
+       padding: 10px; 
+    }
+    strong {
+      font-size: 20px;
+    }
+    .profbox {
+      margin-bottom: 10px;
+    }
+    </style>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+    <div class="w3-container w3-teal">
+      <h1>プロフィール</h1>
+    </div>
+    <div class="w3-container w3-myfont" style="background: #f2f2f2; padding: 10px; box-shadow: -8px 8px 50px -10px;">
+      <!-- 基本情報 -->
+      <div class="w3-container row">
+      <!-- 写真 -->
+      <div class="col-md-4">
+        <p><image src="../assets/download.jpg" alt="企業写真"></image></p>
+      </div>
+      <!-- 個人情報 -->
+      <div class="col-md-4"> 
+        <dl class="list-group">
+          <dt>名前</dt>
+          <dd>Sun*（旧framgia）</dd>
+          <dt>住所</dt>
+          <dd>東京都千代田区神田紺屋町15番地 グランファースト神田紺屋町（旧 神田TKMビル）9F</dd>
+          <dt>連絡先</dt>
+          <dd>03-6419-7633</dd>
+        </dl>
+      </div>
+      <!-- 評価 -->
+      <div class="col-md-4">
+          <div class="card">
+            <div class="card-header" style="text-align: center; background: #009999; color: white;"><strong>評価</strong></div>
+            <div class="card-body" style="background: white; text-align: center;"><h1>3.0点</h1></div>
+            <div class="card-footer" style="text-align: center; background: white;">★★★☆☆</div>
+          </div>
+          <button class="btn btn-success btn-lg" style="width: 80%; margin: 10px 10%; color: white;"><a hre="#">新規投稿</a></button>
+        </div>
+    </div>
+      <!-- 自己紹介 -->
+      <div class="profbox">
+      <div class="w3-container w3-teal"><h3>自己紹介</h3></div>
+      <div class="w3-container" style="background: white;"><p>心を揺さぶるAwesome!を創る機会が平等にある世界<br>
+  本気で課題に挑む人たちと、事業を通して社会にポジティブなアップデートを仕掛けていくこと</p></div>
+    </div>
+<<<<<<< HEAD
+      <ul class="list-group" style="list-style:none; margin-top: 10px;">
+=======
+    <!-- 作業関連 -->
+    <div class="profbox">
+      <div class="w3-container w3-teal"><h3>作業一覧</h3></div>
+      <!-- 作業一覧 -->
+      <div class="w3-container" style="background: white; padding: 10px;">
+        <ul class="list-group" style="list-style:none;">
+>>>>>>> finish profile
+      <div class="list-group-item" style="border: 1px solid #333">
+        <div class="row">
+        <li class="col-md-6">作業名</li>
+        <li class="col-md-2" style="text-align: center;"><a href=>完了</a></li>
+        <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
+        <li class="col-md-2" style="text-align: center;">作業中</li>
+        </div>
+      </div>
+      <div class="list-group-item" style="border: 1px solid #333">
+        <div class="row">
+          <li class="col-md-6">作業名</li>
+          <li class="col-md-2" style="text-align: center;"><a href=>削除</a></li>
+          <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
+          <li class="col-md-2" style="text-align: center;">依頼中</li>
+        </div>
+      </div>
+      <div class="list-group-item" style="border: 1px solid #333">
+        <div class="row">
+          <li class="col-md-6">作業名</li>
+          <li class="col-md-2" style="text-align: center;"><a href="#comment" data-toggle="collapse">詳細</a></li>
+          <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
+          <li class="col-md-2" style="text-align: center;">非承認</li>
+        </div>
+      </div>
+      <div id="comment" class="list-group-item collapse" style="border: 1px solid #333">
+        <div class="row">
+          <li class="col-md-10">コメント</li>
+          <li class="col-md-2" style="text-align: center;"><a href=>再編集</a></li>
+        </div>
+      </div>
+      <div class="list-group-item" style="border: 1px solid #333">
+        <div class="row">
+          <li class="col-md-6">作業名</li>
+          <li class="col-md-2" style="text-align: center;"><a href=>支払い</a></li>
+          <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
+          <li class="col-md-2" style="text-align: center;">完了</li>
+        </div>
+      </div>
+      <div class="list-group-item" style="border: 1px solid #333">
+        <div class="row">
+          <li class="col-md-6">作業名</li>
+          <li class="col-md-2" style="text-align: center;"></li>
+          <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
+          <li class="col-md-2" style="text-align: center;">未承認</li>
+        </div>
+      </div>
+    </ul>
+    </div>
+  </body>
 </html>
 
           
