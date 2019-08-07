@@ -1,52 +1,25 @@
-<%= form_for :tasks, url: tasks_path, method: "GET" do |f| %>
+<%= form_for :task, url: tasks_path, method: "GET" do |f| %>
   <div class="input-group md-form form-sm form-2 pl-0">
     <%= f.text_field :free_text, class: "form-control my-0 py-1 red-border h-65px", placeholder: "検索" %>
     <div class="input-group-append">
-    <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fas fa-search text-grey"
-                                                                      aria-hidden="true"></i></span>
+      <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fa fa-search"></i></span>
     </div>
   </div>
-
   <!----------------------------details search------------------------------>
   <div class="details-search row m-3">
-    <select class="custom-select col-md" id="inputGroupSelect01">
-      <option selected>分野</option>
-      <option value="1">IT系</option>
-      <option value="2">通訳・翻訳</option>
-      <option value="3">マーケティング</option>
-      <option value="4">教育</option>
-    </select>
-    <select class="custom-select ml-2 col-md" id="inputGroupSelect01">
-      <option selected>エリア</option>
-      <option value="1">北海道</option>
-      <option value="2">東北</option>
-      <option value="3">関東</option>
-      <option value="4">中部</option>
-      <option value="5">近畿</option>
-      <option value="6">中国</option>
-      <option value="7">四国</option>
-      <option value="8">九州</option>
-      <option value="9">沖縄</option>
-      <option value="10">その他</option>
-    </select>
-    <select class="custom-select ml-2 col-md" id="inputGroupSelect01">
-      <option selected>賃金</option>
-      <option value="1">5000円以下</option>
-      <option value="2">10000円以下</option>
-      <option value="3">50000円以下</option>
-    </select>
-    <select class="custom-select ml-2 col-md" id="inputGroupSelect01">
-      <option selected>申し込み期日</option>
-      <option value="1">今週中</option>
-      <option value="2">１週間後</option>
-      <option value="3">２週間後</option>
-      <option value="4">３週間後</option>
-      <option value="5">１ヶ月後</option>
-    </select>
+    <%= f.select :field, options_for_select([["分野", "分野"], ["IT系", "IT系"], ["通訳・翻訳", "通訳・翻訳"], ["マーケティング", "マーケティング"], ["教育", "教育"]],
+                                            selected: params[:field]), {}, {class: "custom-select col-md"} %>
+    <%= f.select :area, options_for_select([["エリア", "エリア"], ["北海道", "北海道"], ["東北", "東北"], ["関東", "関東"], ["中部", "中部"], ["近畿", "近畿"],
+                                            ["中国", "中国"], ["四国", "四国"], ["九州", "九州"], ["沖縄", "沖縄"], ["その他", "その他"]],
+                                           selected: params[:area]), {}, {class: "custom-select ml-2 col-md"} %>
+    <%= f.select :salary, options_for_select([["賃金", "賃金"], ["5000円以下", "5000円以下"], ["10000円以下", "10000円以下"], ["50000円以下", "50000円以下"]],
+                                             selected: params[:salary]), {}, {class: "custom-select ml-2 col-md"} %>
+    <%= f.select :registration_deadline, options_for_select([["申し込み期日", "申し込み期日"], ["今週中", "今週中"], ["１週間後", "１週間後"], ["２週間後", "２週間後"], ["３週間後", "３週間後"], ["１ヶ月後", "１ヶ月後"],],
+                                                            selected: params[:registration_deadline]), {}, {class: "custom-select ml-2 col-md"} %>
     <div class="custom-control custom-checkbox col-md-3 ml-2 checkbox-veteran">
       <div class="mt-1 text-center">
-        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-        <label class="custom-control-label" for="defaultUnchecked">未経験可能</label>
+        <%= f.check_box :veteran, {class: "custom-control-input"}, true, false %>
+        <%= f.label :veteran, "未経験可能", class: "custom-control-label" %> <br/>
       </div>
     </div>
   </div>
