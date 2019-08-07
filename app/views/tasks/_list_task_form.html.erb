@@ -10,9 +10,8 @@
 </div>
 <div class="card-body">
   <ul class="list-group">
-    <%= render "tasks/form" %>
-    <%= render "tasks/form" %>
-    <%= render "tasks/form" %>
-    <%= render "tasks/form" %>
+    <% tasks.each do |e| %>
+      <%= render "tasks/form", task: e %>
+    <% end %>
   </ul>
 </div>

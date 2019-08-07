@@ -1,27 +1,27 @@
 <div class="list-group-item task-content-height">
   <div class="row h-100">
     <div class="col-md-6">
-      <%= link_to 'tasks/1' do %>
-        長期海外在住中のランサーもいるので、多様に求められるご要望に柔軟にお応えします。
-        コンペを使えは、１～２週間で数十から数百点のデザインやアイディアを集めることができます。
+      <p class="mb-4"><%= task.content[0..90].strip %>...</p>
+      <%= link_to task, class: "read_more btn btn-link" do %>
+        更に表示
       <% end %>
     </div>
     <div class="col-md-2">
-      <div class="row max-width h-50 category-tasks">
-        分野
+      <div class="row max-width h-50 pt-0 category-tasks custom-text-center">
+        <%= task.field %>
       </div>
-      <div class="row max-width h-50 category-tasks">
-        エリア
+      <div class="row max-width h-50 pt-0 category-tasks custom-text-center">
+        <%= task.area %>
       </div>
     </div>
     <div class="col-md-2">
-      <div class="row max-width h-50 category-tasks">
-        賃金
+      <div class="row max-width h-50 pt-0 category-tasks custom-text-center">
+        <%= task.salary %>
       </div>
-      <div class="row max-width h-50 category-tasks">
-        未経験の可能
+      <div class="row max-width h-50 pt-0 category-tasks custom-text-center">
+        <%= task.veteran ? "未経験の可能" : "経験可能" %>
       </div>
     </div>
-    <div class="col-md-2 category-tasks">期日</div>
+    <div class="col-md-2 category-tasks pt-4 custom-text-center">申し込み期日 <%= task.registration_deadline.strftime("%Y-%m-%d") %></div>
   </div>
 </div>
