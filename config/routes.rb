@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: "tops#index"
   namespace :admin do
     resources :users
+    resources :tasks
     get "/", :to => "tops#index"
   end
 end

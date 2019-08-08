@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :get_task, only: [:show]
 
   def index
-    @tasks = Task.where field: params[:field]
+    @tasks = Task.all.where(status: 1).where("content LIKE ?" , "%#{task_params[:free_text]}%")
   end
 
   def show
@@ -21,6 +21,6 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit :name, :content, :field, :area, :salary,
-                                 :registration_deadline, :task_deadline, :veteran, :descript_url, :money_unit
+                                 :registration_deadline, :task_deadline, :veteran, :descript_url, :money_unit, :free_text
   end
 end
