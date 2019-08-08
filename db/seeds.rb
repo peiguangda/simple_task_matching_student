@@ -56,7 +56,7 @@ address_name = ["東京", "大阪", "関東", "北海道", "九州", "Ha Noi", "
   registration_deadline: Time.now,
   task_deadline: Time.now+100000,
   veteran: true,
-  status: true,
+  status: 0,
   descript_url: "フリーランスの仕事",
   money_unit:  "円",
   time_to_do: "1ヶ月"
@@ -77,7 +77,7 @@ user.tasks.build(
   registration_deadline: Time.now,
   task_deadline: Time.now+100000,
   veteran: true,
-  status: false,
+  status: 0,
   descript_url: "フリーランスの仕事",
   money_unit:  "円",
   time_to_do: "1ヶ月"
@@ -98,7 +98,7 @@ user.tasks.build(
   registration_deadline: Time.now,
   task_deadline: Time.now+100000,
   veteran: true,
-  status: false,
+  status: 0,
   descript_url: "フリーランスの仕事",
   money_unit:  "円",
   time_to_do: "1ヶ月"
@@ -116,7 +116,7 @@ user.tasks.build(
   registration_deadline: Time.now,
   task_deadline: Time.now+100000,
   veteran: true,
-  status: false,
+  status: 0,
   descript_url: "フリーランスの仕事",
   money_unit:  "円",
   time_to_do: "1ヶ月"
@@ -136,7 +136,7 @@ user.tasks.build(
   registration_deadline: Time.now,
   task_deadline: Time.now+100000,
   veteran: true,
-  status: true,
+  status: 0,
   descript_url: "フリーランスの仕事",
   money_unit:  "円",
   time_to_do: "1ヶ月"

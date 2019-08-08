@@ -8,9 +8,9 @@
       <div class="row w-100"><%= task.content %></div>
     </div>
     <div class="col-md mt-2 ml-2">
-      <div class="row w-100"><button type="button" class="btn btn-info w-100">承認</button></div>
-      <div class="row w-100"><button type="button" class="btn btn-danger w-100">非承認</button></div>
-      <div class="row w-100 justify-content-center"><%= link_to "詳細>>", "/tasks/1", class: "btn btn-primary w-100"%></div>
+      <div class="row w-100"><%= link_to "承認", admin_task_path(id: task.id, is_approved: true), class: "btn btn-info w-100", method: "put" %></div>
+      <div class="row w-100"><%= link_to "非承認", admin_task_path(id: task.id, is_approved: false), class: "btn btn-danger w-100", method: "put" %></div>
+      <div class="row w-100 justify-content-center"><%= link_to "詳細>>", "/tasks/1", class: "btn btn-primary w-100" %></div>
     </div>
   </div>
 </div>

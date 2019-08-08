@@ -42,7 +42,7 @@ body {
 }
 
 .admin-list-task {
-  border: 1px solid #356ca4;
+  border: 1px solid #dae2e9;
   border-radius: 10px;
   min-height: 140px;
   max-height: 200px;
@@ -86,4 +86,14 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+
+.custom-dropdown, .navbar-expand-lg .navbar-collapse {
+  float: right;
+  display: contents !important;
+}
+
+.show-custom {
+  right: 45px;
+  display: unset;
 }

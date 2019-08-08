@@ -1,15 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light nav-color">
   <a class="navbar-brand logo-color col-md ml-4 mt-1" href="/">簡易作業マッチング</a>
-  <a class="navbar-brand color-white offset-md-5 col-md mt-1" href="/admin/users">ユーザー一覧</a>
-  <a class="navbar-brand color-white col-md mt-1" href="/admin">作業一覧</a>
+  <% if user_signed_in? && current_user.role == 3 %>
+    <a class="navbar-brand color-white offset-md-6 col-md mt-1" href="/admin/users">ユーザー一覧</a>
+    <a class="navbar-brand color-white col-md mt-1" href="/admin">作業一覧</a>
+  <% end %>
   <button class="navbar-toggler col-md" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse col-md ml-2" id="navbarNavDropdown">
+  <div class="collapse navbar-collapse custom-dropdown col-md ml-2" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle nav-user-name-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown show-custom">
+          <a class="nav-link dropdown-toggle nav-user-name-style show-custom" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -18,11 +20,11 @@
               <%= link_to "プロフィール", users_student_path, class: "dropdown-item" %>
             <% else %>
               <!--企業-->
-              <% if current_user.role == 1 %>
+              <% if current_user.role == 1 || current_user.role == 2 %>
                 <%= link_to "プロフィール", users_profile_path, class: "dropdown-item" %>
               <% end %>
             <% end %>
-            <%= link_to "ログアウト", destroy_user_session_url, class: "dropdown-item", method: "delete" %>
+            <%= link_to "ログアウト", destroy_user_session_url, class: "dropdown-item show-custom", method: "delete" %>
           </div>
         </li>
       <% else %>
