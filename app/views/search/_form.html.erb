@@ -7,12 +7,12 @@
   </div>
   <!----------------------------details search------------------------------>
   <div class="details-search row m-3">
-    <%= f.select :field, options_for_select([["分野", "分野"], ["IT系", "IT系"], ["通訳・翻訳", "通訳・翻訳"], ["マーケティング", "マーケティング"], ["教育", "教育"]],
+    <%= f.select :field, options_for_select([["分野", "分野"], ["経理", "経理"], ["販売", "販売"], ["製造業", "製造業"], ["農業", "農業"], ["IT系", "IT系"], ["通訳・翻訳", "通訳・翻訳"], ["マーケティング", "マーケティング"], ["教育", "教育"]],
                                             selected: params[:field]), {}, {class: "custom-select col-md"} %>
-    <%= f.select :area, options_for_select([["エリア", "エリア"], ["北海道", "北海道"], ["東北", "東北"], ["関東", "関東"], ["中部", "中部"], ["近畿", "近畿"],
+    <%= f.select :area, options_for_select([["エリア", "エリア"], ["東京", "東京"], ["大阪", "大阪"], ["神戸", "神戸"], ["北海道", "北海道"], ["東北", "東北"], ["関東", "関東"], ["中部", "中部"], ["近畿", "近畿"],
                                             ["中国", "中国"], ["四国", "四国"], ["九州", "九州"], ["沖縄", "沖縄"], ["その他", "その他"]],
                                            selected: params[:area]), {}, {class: "custom-select ml-2 col-md"} %>
-    <%= f.select :salary, options_for_select([["賃金", "賃金"], ["5000円以下", "5000円以下"], ["10000円以下", "10000円以下"], ["50000円以下", "50000円以下"]],
+    <%= f.select :salary, options_for_select([["賃金", "賃金"], ["500円以下", "500円以下"], ["1000円以下", "1000円以下"], ["5000円以下", "5000円以下"], ["10000円以下", "10000円以下"], ["50000円以下", "50000円以下"]],
                                              selected: params[:salary]), {}, {class: "custom-select ml-2 col-md"} %>
     <%= f.select :registration_deadline, options_for_select([["申し込み期日", "申し込み期日"], ["今週中", "今週中"], ["１週間後", "１週間後"], ["２週間後", "２週間後"], ["３週間後", "３週間後"], ["１ヶ月後", "１ヶ月後"],],
                                                             selected: params[:registration_deadline]), {}, {class: "custom-select ml-2 col-md"} %>
