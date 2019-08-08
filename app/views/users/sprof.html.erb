@@ -104,7 +104,7 @@
           <% matching_task = @matching_tasks.find_by(task_id: task.id) %>
           <div class="list-group-item" style="border: 1px solid #333">
             <div class="row">
-              <li class="col-md-6"><%= task.name %></li>
+              <li class="col-md-6"><%= task.name %><br><a href=>企業：名前</a></li>
               <li class="col-md-2" style="text-align: center;"></li>
               <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
               <li class="col-md-2" style="text-align: center;"><%= get_status matching_task ? matching_task.status : 0 %></li>
