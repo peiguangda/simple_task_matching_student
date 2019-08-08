@@ -60,17 +60,15 @@
   <div class="w3-container row">
     <!-- 写真 -->
     <div class="col-md-4">
-      <p>
-        <image src="../assets/download.jpg" alt="企業写真"></image>
-      </p>
+      <p><%= image_tag "https://3.bp.blogspot.com/-AkPrMzKlFQA/WWXXO2crNrI/AAAAAAABFgk/4DNboHEC70Yd67ksBgavpXbziXXaxBAJACLcBGAs/s400/shimekiri_report_schoolboy.png", alt: "学生写真" %></p>
     </div>
     <!-- 個人情報 -->
     <div class="col-md-4">
       <dl class="list-group">
         <dt>名前</dt>
-        <dd><%= current_user.name %></dd>
+        <dd><%= @user.name %></dd>
         <dt>住所</dt>
-        <dd><%= current_user.address %></dd>
+        <dd><%= @user.address %></dd>
         <dt>連絡先</dt>
         <dd>03-6419-7633</dd>
       </dl>
@@ -94,6 +92,7 @@
   </div>
   <ul class="list-group" style="list-style:none; margin-top: 10px;">
     <!-- 作業関連 -->
+    <% if !@tasks.nil? %>
     <div class="profbox">
       <div class="w3-container w3-teal"><h3>作業一覧</h3></div>
       <!-- 作業一覧 -->
@@ -106,50 +105,15 @@
                 <li class="col-md-6"><%= task.name %></li>
                 <li class="col-md-2" style="text-align: center;"><a href=>完了</a></li>
                 <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-                <li class="col-md-2" style="text-align: center;">作業中<br>担当：<a href=>名前</a></a></li>
+                <li class="col-md-2" style="text-align: center;">作業中<br>
+                <%= link_to "担当者" %>
+                </li>
             </div>
           <% end %>
-          <div class="list-group-item" style="border: 1px solid #333">
-            <div class="row">
-              <li class="col-md-6">作業名</li>
-              <li class="col-md-2" style="text-align: center;"><a href=>削除</a></li>
-              <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-              <li class="col-md-2" style="text-align: center;">依頼中</li>
-            </div>
-          </div>
-          <div class="list-group-item" style="border: 1px solid #333">
-            <div class="row">
-              <li class="col-md-6">作業名</li>
-              <li class="col-md-2" style="text-align: center;"><a href="#comment" data-toggle="collapse">詳細</a></li>
-              <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-              <li class="col-md-2" style="text-align: center;">非承認</li>
-            </div>
-          </div>
-          <div id="comment" class="list-group-item collapse" style="border: 1px solid #333">
-            <div class="row">
-              <li class="col-md-10">コメント</li>
-              <li class="col-md-2" style="text-align: center;"><a href="#">再編集</a></li>
-            </div>
-          </div>
-          <div class="list-group-item" style="border: 1px solid #333">
-            <div class="row">
-              <li class="col-md-6">作業名</li>
-              <li class="col-md-2" style="text-align: center;"><a href=>支払い</a></li>
-              <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-              <li class="col-md-2" style="text-align: center;">完了<br>担当：<a href=>名前</a></li>
-            </div>
-          </div>
-          <div class="list-group-item" style="border: 1px solid #333">
-            <div class="row">
-              <li class="col-md-6">作業名</li>
-              <li class="col-md-2" style="text-align: center;"></li>
-              <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-              <li class="col-md-2" style="text-align: center;">未承認</li>
-            </div>
-          </div>
         </ul>
       </div>
     </div>
+    <% end %>
   </ul>
 </div>
 </body>

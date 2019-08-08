@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  get "users/profile", :to => "users#show"
+  get "users/profile", :to => "users#company"
   get "users/student", :to => "users#sprof"
   resources :users
   resources :tasks
