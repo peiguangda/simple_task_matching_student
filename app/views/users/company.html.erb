@@ -88,31 +88,36 @@
   <!-- 自己紹介 -->
   <div class="profbox">
     <div class="w3-container w3-teal"><h3>自社紹介</h3></div>
-    <div class="w3-container" style="background: white;"><p><%= current_user.self_introduction %></p></div>
+    <div class="w3-container" style="background: white;"><p><%= @user.self_introduction %></p></div>
   </div>
   <ul class="list-group" style="list-style:none; margin-top: 10px;">
     <!-- 作業関連 -->
     <% if !@tasks.nil? %>
-    <div class="profbox">
-      <div class="w3-container w3-teal"><h3>作業一覧</h3></div>
-      <!-- 作業一覧 -->
-      <div class="w3-container" style="background: white; padding: 10px;">
-        <ul class="list-group" style="list-style:none;">
-          <% @tasks.each do |task| %>
-            <% matching_task = @matching_tasks.find_by(task_id: task.id) %>
-            <div class="list-group-item" style="border: 1px solid #333">
-              <div class="row">
-                <li class="col-md-6"><%= task.name %></li>
-                <li class="col-md-2" style="text-align: center;"><a href=>完了</a></li>
-                <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-                <li class="col-md-2" style="text-align: center;">作業中<br>
-                <%= link_to "担当者" %>
-                </li>
-            </div>
-          <% end %>
-        </ul>
+      <div class="profbox">
+        <div class="w3-container w3-teal"><h3>作業一覧</h3></div>
+        <!-- 作業一覧 -->
+        <div class="w3-container" style="background: white; padding: 10px;">
+          <ul class="list-group" style="list-style:none;">
+            <% @tasks.each do |task| %>
+              <% matching_tasks = task.matching_tasks %>
+              <div class="list-group-item" style="border: 1px solid #333">
+                <div class="row">
+                  <li class="col-md-6"><%= task.name %></li>
+                  <li class="col-md-2" style="text-align: center;"><a>完了</a></li>
+                  <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
+                  <% @task_status = task.status %>
+                  <% matching_tasks.each do |matching_task| %>
+                    <% @task_status = matching_task.status %>
+                    <%= link_to matching_task.user.name, user_path(id: matching_task.user.id), target: "_blank" %>
+                  <% end %>
+                  <li class="col-md-2" style="text-align: center;"><%= get_company_task_status @task_status %><br>
+                  </li>
+                </div>
+              </div>
+            <% end %>
+          </ul>
+        </div>
       </div>
-    </div>
     <% end %>
   </ul>
 </div>
