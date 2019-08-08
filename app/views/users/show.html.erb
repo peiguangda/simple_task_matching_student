@@ -89,7 +89,7 @@
   </div>
   <!-- 自己紹介 -->
   <div class="profbox">
-    <div class="w3-container w3-teal"><h3>自己紹介</h3></div>
+    <div class="w3-container w3-teal"><h3>自社紹介</h3></div>
     <div class="w3-container" style="background: white;"><p><%= current_user.self_introduction %></p></div>
   </div>
   <ul class="list-group" style="list-style:none; margin-top: 10px;">
@@ -106,8 +106,7 @@
                 <li class="col-md-6"><%= task.name %></li>
                 <li class="col-md-2" style="text-align: center;"><a href=>完了</a></li>
                 <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-                <li class="col-md-2" style="text-align: center;">作業中</li>
-              </div>
+                <li class="col-md-2" style="text-align: center;">作業中<br>担当：<a href=>名前</a></a></li>
             </div>
           <% end %>
           <div class="list-group-item" style="border: 1px solid #333">
@@ -137,7 +136,7 @@
               <li class="col-md-6">作業名</li>
               <li class="col-md-2" style="text-align: center;"><a href=>支払い</a></li>
               <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-              <li class="col-md-2" style="text-align: center;">完了</li>
+              <li class="col-md-2" style="text-align: center;">完了<br>担当：<a href=>名前</a></li>
             </div>
           </div>
           <div class="list-group-item" style="border: 1px solid #333">
