@@ -62,7 +62,7 @@
   <div class="w3-container row">
     <!-- 写真 -->
     <div class="col-md-4" style="padding: 0;">
-      <p><%= image_tag "https://3.bp.blogspot.com/-AkPrMzKlFQA/WWXXO2crNrI/AAAAAAABFgk/4DNboHEC70Yd67ksBgavpXbziXXaxBAJACLcBGAs/s400/shimekiri_report_schoolboy.png", alt: "学生写真" %></p>
+      <p><%= image_tag "https://2.bp.blogspot.com/-fjf5yU5r1Jk/WE1VD1BBKpI/AAAAAAAAjgI/bXwGoigAPJYvScMPtzJtzbOJfoGQO2C_ACEw/s1600/15349541_533868826819201_3350340522319981193_n.jpg", alt: "学生写真" %></p>
     </div>
     <!-- 個人情報 -->
     <div class="col-md-4" style="padding-top: 20px;">
@@ -96,29 +96,29 @@
   </div>
   <!-- 作業関連 -->
   <% if !@tasks.nil? %>
-  <div class="profbox">
-    <div class="w3-container w3-teal"><h3>作業一覧</h3></div>
-    <!-- 作業一覧 -->
-    <div class="w3-container" style="background: white; padding: 10px;">
-      <ul class="list-group" style="list-style:none;">
-        
-        <% @tasks.each do |task| %>
-          <% matching_task = @matching_tasks.find_by(task_id: task.id) %>
-          <div class="list-group-item" style="border: 1px solid #333">
-            <div class="row">
-              <li class="col-md-6"><%= task.name %><br><a href=>企業:</a>
-              <%= link_to task.user.name, user_path(task.user.id), target: '_blank'  %>
-              </li>
-              <li class="col-md-2" style="text-align: center;"></li>
-              <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
-              <li class="col-md-2" style="text-align: center;"><%= get_status matching_task ? matching_task.status : 0 %></li>
+    <div class="profbox">
+      <div class="w3-container w3-teal"><h3>作業一覧</h3></div>
+      <!-- 作業一覧 -->
+      <div class="w3-container" style="background: white; padding: 10px;">
+        <ul class="list-group" style="list-style:none;">
+
+          <% @tasks.each do |task| %>
+            <% matching_task = @matching_tasks.find_by(task_id: task.id) %>
+            <div class="list-group-item" style="border: 1px solid #333">
+              <div class="row">
+                <li class="col-md-6"><%= task.name %><br><a href=>企業:</a>
+                  <%= link_to task.user.name, user_path(task.user.id), target: '_blank' %>
+                </li>
+                <li class="col-md-2 custom-text-center" style="text-align: center;"><%= get_status matching_task ? matching_task.status : 0 %></li>
+                <li class="col-md-2 custom-text-center" style="text-align: center;"><%= link_to matching_task.status == 3 ? "キャンセル" : "", "#" %></li>
+                <li class="col-md-2 custom-text-center" style="text-align: center;"><a href=>DM</a></li>
+              </div>
             </div>
-          </div>
-        <% end %>
-        
-      </ul>
+          <% end %>
+
+        </ul>
+      </div>
     </div>
-  </div>
   <% end %>
 </div>
 </body>

@@ -60,7 +60,7 @@
   <div class="w3-container row">
     <!-- 写真 -->
     <div class="col-md-4">
-      <p><%= image_tag "https://3.bp.blogspot.com/-AkPrMzKlFQA/WWXXO2crNrI/AAAAAAABFgk/4DNboHEC70Yd67ksBgavpXbziXXaxBAJACLcBGAs/s400/shimekiri_report_schoolboy.png", alt: "学生写真" %></p>
+      <p><%= image_tag "https://wsm.framgia.vn/assets/logo_framgia-58c446c37727ba4bc8317121c321edd3d4ed081787fac85cb08240dcef9dd062.png", alt: "企業写真" %></p>
     </div>
     <!-- 個人情報 -->
     <div class="col-md-4">
@@ -102,15 +102,23 @@
               <% matching_tasks = task.matching_tasks %>
               <div class="list-group-item" style="border: 1px solid #333">
                 <div class="row">
-                  <li class="col-md-6"><%= task.name %></li>
-                  <li class="col-md-2" style="text-align: center;"><a>完了</a></li>
-                  <li class="col-md-2" style="text-align: center;"><a href=>DM</a></li>
+                  <li class="col-md-4 custom-text-center"><%= task.name %></li>
                   <% @task_status = task.status %>
-                  <% matching_tasks.each do |matching_task| %>
-                    <% @task_status = matching_task.status %>
-                    <%= link_to matching_task.user.name, user_path(id: matching_task.user.id), target: "_blank" %>
-                  <% end %>
-                  <li class="col-md-2" style="text-align: center;"><%= get_company_task_status @task_status %><br>
+                  <div class="col-md-4">
+                    <% matching_tasks.each do |matching_task| %>
+                      <% @task_status = matching_task.status %>
+                      <div class="row">
+                        <%= link_to matching_task.user.name + "さん", user_path(id: matching_task.user.id), class: "col col-md-5", target: "_blank" %>
+                        <%= link_to "承認", "#", class: "col-md" %>
+                        <%= link_to "非承認", "#", class: "col-md" %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <li class="col-md-2 custom-text-center" style="text-align: center;"><%= get_company_task_status @task_status %>
+                    <br>
+                  <li class="col-md custom-text-center" style="text-align: center;">
+                    <a><%= link_to @task_status == 8 ? "完了" : "未完了", "#" %></a></li>
+                  <li class="col-md custom-text-center" style="text-align: center;"><a href=>DM</a></li>
                   </li>
                 </div>
               </div>
